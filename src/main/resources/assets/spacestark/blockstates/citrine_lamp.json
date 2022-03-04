@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "clicked=false": { "model": "spacestark:block/citrine_lamp_off" },
+    "clicked=true": { "model": "spacestark:block/citrine_lamp_on" }
+  }
+}

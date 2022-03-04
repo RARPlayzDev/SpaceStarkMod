@@ -14,6 +14,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.rarpalyz.spacestark.Spacestark;
+import net.rarpalyz.spacestark.block.custom.CitrineLampBlock;
 import net.rarpalyz.spacestark.block.custom.SpeedyBlock;
 import net.rarpalyz.spacestark.item.ModCreativeModeTab;
 import net.rarpalyz.spacestark.item.ModItems;
@@ -64,9 +65,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> CITRINE_FENCE = registerBlock("citrine_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.SPACE_TAB);
+
     public static final RegistryObject<Block> CITRINE_FENCE_GATE = registerBlock("citrine_fence_gate",
             () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.SPACE_TAB);
+
     public static final RegistryObject<Block> CITRINE_WALL = registerBlock("citrine_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.SPACE_TAB);
@@ -74,6 +77,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> CITRINE_BUTTON = registerBlock("citrine_button",
             () -> new StoneButtonBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(5f).requiresCorrectToolForDrops().noCollission()), ModCreativeModeTab.SPACE_TAB);
+
     public static final RegistryObject<Block> CITRINE_PRESSURE_PLATE = registerBlock("citrine_pressure_plate",
             () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.METAL)
                     .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.SPACE_TAB);
@@ -81,6 +85,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> EBONY_DOOR = registerBlock("ebony_door",
             () -> new DoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(5f).requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.SPACE_TAB);
+
     public static final RegistryObject<Block> EBONY_TRAPDOOR = registerBlock("ebony_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(5f).requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.SPACE_TAB);
@@ -96,7 +101,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> WINTER_WINDOW = registerBlock("winter_window",
             () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion()), ModCreativeModeTab.SPACE_TAB);
 
-
+    public static final RegistryObject<Block> CITRINE_LAMP = registerBlock("citrine_lamp",
+            () -> new CitrineLampBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(2f).requiresCorrectToolForDrops().lightLevel(
+                            (state) -> state.getValue(CitrineLampBlock.CLICKED) ? 15 : 0)),
+            ModCreativeModeTab.SPACE_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);
