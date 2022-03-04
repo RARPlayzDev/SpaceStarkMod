@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "spacestark:block/citrine_block",
+    "top": "spacestark:block/citrine_block",
+    "side": "spacestark:block/citrine_block"
+  }
+}

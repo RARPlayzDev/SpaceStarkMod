@@ -1,0 +1,51 @@
+{
+  "item.spacestark.citrine": "Citrine",
+  "item.spacestark.raw_citrine": "Raw Citrine",
+  "item.spacestark.dowsing_rod": "Dowsing Rod",
+  "item.spacestark.cucumber": "Cucumber",
+  "item.spacestark.coal_coke": "Coal Coke",
+
+  "item.spacestark.citrine_pickaxe": "Citrine Pickaxe",
+  "item.spacestark.citrine_axe": "Citrine Axe",
+  "item.spacestark.citrine_shovel": "Citrine Shovel",
+  "item.spacestark.citrine_hoe": "Citrine Hoe",
+  "item.spacestark.citrine_sword": "Citrine Sword",
+
+  "item.spacestark.citrine_helmet": "Citrine Helmet",
+  "item.spacestark.citrine_chestplate": "Citrine Chestplate",
+  "item.spacestark.citrine_leggings": "Citrine Leggings",
+  "item.spacestark.citrine_boots": "Citrine Boots",
+
+  "item.spacestark.magic_dust": "Magic Dust",
+
+  "block.spacestark.citrine_block": "Citrine Block",
+  "block.spacestark.raw_citrine_block": "Raw Citrine Block",
+  "block.spacestark.citrine_ore": "Citrine Ore",
+  "block.spacestark.deepslate_citrine_ore": "Deepslate Citrine Ore",
+  "block.spacestark.netherrack_citrine_ore": "Netherrack Citrine Ore",
+  "block.spacestark.endstone_citrine_ore": "Endstone Citrine Ore",
+  "block.spacestark.speedy_block": "Speedy Block",
+
+  "block.spacestark.citrine_slab": "Citrine Slab",
+  "block.spacestark.citrine_stairs": "Citrine Stairs",
+  "block.spacestark.citrine_fence": "Citrine Fence",
+  "block.spacestark.citrine_wall": "Citrine Wall",
+  "block.spacestark.citrine_fence_gate": "Citrine Fence Gate",
+
+  "block.spacestark.citrine_button": "Citrine Button",
+  "block.spacestark.citrine_pressure_plate": "Citrine Pressure Plate",
+  "block.spacestark.ebony_door": "Ebony Door",
+  "block.spacestark.ebony_trapdoor": "Ebony Trapdoor",
+
+  "block.spacestark.pink_rose": "Pink Rose",
+  "block.spacestark.potted_pink_rose": "Potted Pink Rose",
+
+  "block.spacestark.winter_window": "Winter Window",
+
+  "itemGroup.space": "Spacestark",
+
+  "item.spacestark.dowsing_rod.no_valuables": "No Valuables Found!",
+  "tooltip.spacestark.dowsing_rod.tooltip.shift": "Right Click to find Valuables!",
+  "tooltip.spacestark.dowsing_rod.tooltip": "Press §eSHIFT§r for more Information!",
+  "tooltip.spacestark.block.speedy_block": "I am speed!"
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/button",
+  "textures": {
+    "texture": "spacestark:block/citrine_block"
+  }
+}
