@@ -7,10 +7,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.rarpalyz.spacestark.item.custom.CoalCokeItem;
-import net.rarpalyz.spacestark.item.custom.DowsingRodItem;
-import net.rarpalyz.spacestark.item.custom.LevitationSwordItem;
-import net.rarpalyz.spacestark.item.custom.ModArmorItem;
+import net.rarpalyz.spacestark.item.custom.*;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -70,7 +67,8 @@ public class ModItems {
     public static final RegistryObject<Item> MAGIC_DUST = ITEMS.register("magic_dust",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.SPACE_TAB)));
 
-
+    public static final RegistryObject<Item> DATA_TABLET = ITEMS.register("data_tablet",
+            () -> new DataTabletItem(new Item.Properties().tab(ModCreativeModeTab.SPACE_TAB).stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
