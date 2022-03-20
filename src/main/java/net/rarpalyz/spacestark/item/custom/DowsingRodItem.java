@@ -2,10 +2,12 @@ package net.rarpalyz.spacestark.item.custom;
 
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -15,6 +17,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.rarpalyz.spacestark.item.ModItems;
+import net.rarpalyz.spacestark.sound.ModSounds;
 import net.rarpalyz.spacestark.util.InventoryUtil;
 import net.rarpalyz.spacestark.util.ModTags;
 import org.jetbrains.annotations.Nullable;
@@ -28,27 +31,30 @@ public class DowsingRodItem extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext pContext) {
-        if(pContext.getLevel().isClientSide()) {
+        if (pContext.getLevel().isClientSide()) {
             BlockPos positionClicked = pContext.getClickedPos();
             Player player = pContext.getPlayer();
             boolean foundBlock = false;
 
-            for(int i = 0; i <= positionClicked.getY() + 64; i++) {
+            for (int i = 0; i <= positionClicked.getY() + 64; i++) {
                 Block blockBelow = pContext.getLevel().getBlockState(positionClicked.below(i)).getBlock();
 
-                if(isValuableBlock(blockBelow)) {
+                if (isValuableBlock(blockBelow)) {
                     outputValuableCoordinates(positionClicked.below(i), player, blockBelow);
                     foundBlock = true;
 
-                    if(InventoryUtil.hasPlayerStackInInventory(player, ModItems.DATA_TABLET.get())) {
+                    if (InventoryUtil.hasPlayerStackInInventory(player, ModItems.DATA_TABLET.get())) {
                         addNbtToDataTablet(player, positionClicked.below(i), blockBelow);
                     }
+
+                    pContext.getLevel().playSound(player, positionClicked, ModSounds.DOWSING_ROD_FOUND_ORE.get(),
+                            SoundSource.BLOCKS, 1f, 1f);
 
                     break;
                 }
             }
 
-            if(!foundBlock) {
+            if (!foundBlock) {
                 player.sendMessage(new TranslatableComponent("item.spacestark.dowsing_rod.no_valuables"),
                         player.getUUID());
             }
@@ -66,14 +72,14 @@ public class DowsingRodItem extends Item {
 
         CompoundTag nbtData = new CompoundTag();
         nbtData.putString("spacestark.last_ore", "Found " + blockBelow.asItem().getRegistryName().toString() + " at (" +
-                pos.getX() + ", "+ pos.getY() + ", "+ pos.getZ() + ")");
+                pos.getX() + ", " + pos.getY() + ", " + pos.getZ() + ")");
 
         dataTablet.setTag(nbtData);
     }
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if(Screen.hasShiftDown()) {
+        if (Screen.hasShiftDown()) {
             pTooltipComponents.add(new TranslatableComponent("tooltip.spacestark.dowsing_rod.tooltip.shift"));
         } else {
             pTooltipComponents.add(new TranslatableComponent("tooltip.spacestark.dowsing_rod.tooltip"));
@@ -86,6 +92,6 @@ public class DowsingRodItem extends Item {
     }
 
     private boolean isValuableBlock(Block block) {
-        return ModTags.Blocks.DOWSING_ROD_VALUABLES.contains(block);
+        return Registry.BLOCK.getHolderOrThrow(Registry.BLOCK.getResourceKey(block).get()).is(ModTags.Blocks.DOWSING_ROD_VALUABLES);
     }
 }

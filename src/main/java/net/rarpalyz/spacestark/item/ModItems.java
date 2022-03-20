@@ -7,7 +7,9 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.rarpalyz.spacestark.block.ModBlocks;
 import net.rarpalyz.spacestark.item.custom.*;
+import net.rarpalyz.spacestark.sound.ModSounds;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -69,6 +71,18 @@ public class ModItems {
 
     public static final RegistryObject<Item> DATA_TABLET = ITEMS.register("data_tablet",
             () -> new DataTabletItem(new Item.Properties().tab(ModCreativeModeTab.SPACE_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> TERA_MUSIC_DISC = ITEMS.register("tera_music_disc",
+            () -> new RecordItem(4, ModSounds.TERA,
+                    new Item.Properties().tab(ModCreativeModeTab.SPACE_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> CUCUMBER_SEEDS = ITEMS.register("cucumber_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.CUCUMBER_PLANT.get(),
+                    new Item.Properties().tab(ModCreativeModeTab.SPACE_TAB)));
+
+    public static final RegistryObject<Item> MAGIC_BOW = ITEMS.register("magic_bow",
+            () -> new BowItem(new Item.Properties().tab(ModCreativeModeTab.SPACE_TAB).durability(500)));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

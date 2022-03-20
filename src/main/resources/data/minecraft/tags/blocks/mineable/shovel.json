@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-
+    "spacestark:mud",
+    "spacestark:mud_bricks"
   ]
 }

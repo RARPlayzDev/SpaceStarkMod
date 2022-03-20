@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "spacestark:block/black_sandstone_bottom",
+    "up": "spacestark:block/black_sandstone_top",
+    "north": "spacestark:block/black_sandstone",
+    "east": "spacestark:block/black_sandstone",
+    "south": "spacestark:block/black_sandstone",
+    "west": "spacestark:block/black_sandstone"
+  }
+}

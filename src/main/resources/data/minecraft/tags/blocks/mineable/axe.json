@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-
+    "spacestark:ebony_door",
+    "spacestark:ebony_trapdoor"
   ]
 }

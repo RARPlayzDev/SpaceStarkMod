@@ -1,0 +1,46 @@
+{
+  "dowsing_rod_found_ore": {
+    "subtitle": "sounds.spacestark.dowsing_rod_found_ore",
+    "sounds": [
+      "spacestark:dowsing_rod_found_ore"
+    ]
+  },
+  "citrine_lamp_break": {
+    "subtitle": "spacestark.citrine_lamp_break",
+    "sounds": [
+      "spacestark:citrine_lamp_break"
+    ]
+  },
+  "citrine_lamp_step": {
+    "subtitle": "spacestark.citrine_lamp_step",
+    "sounds": [
+      "spacestark:citrine_lamp_step"
+    ]
+  },
+  "citrine_lamp_place": {
+    "subtitle": "spacestark.citrine_lamp_place",
+    "sounds": [
+      "spacestark:citrine_lamp_place"
+    ]
+  },
+  "citrine_lamp_hit": {
+    "subtitle": "spacestark.citrine_lamp_hit",
+    "sounds": [
+      "spacestark:citrine_lamp_hit"
+    ]
+  },
+  "citrine_lamp_fall": {
+    "subtitle": "spacestark.citrine_lamp_fall",
+    "sounds": [
+      "spacestark:citrine_lamp_fall"
+    ]
+  },
+    "tera": {
+      "sounds": [
+        {
+          "name": "spacestark:tera",
+          "stream": true
+        }
+      ]
+    }
+  }

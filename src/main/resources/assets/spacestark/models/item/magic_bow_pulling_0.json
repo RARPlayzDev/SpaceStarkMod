@@ -1,0 +1,6 @@
+{
+    "parent": "spacestark:item/magic_bow",
+    "textures": {
+        "layer0": "spacestark:item/magic_bow_pulling_0"
+    }
+}
