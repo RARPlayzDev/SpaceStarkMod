@@ -25,6 +25,7 @@ import net.rarpalyz.spacestark.block.custom.SpeedyBlock;
 import net.rarpalyz.spacestark.item.ModCreativeModeTab;
 import net.rarpalyz.spacestark.item.ModItems;
 import net.rarpalyz.spacestark.sound.ModSounds;
+import net.rarpalyz.spacestark.world.feature.tree.EbonyTreeGrower;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -174,6 +175,28 @@ public class ModBlocks {
                     return 5;
                 }
             }, ModCreativeModeTab.SPACE_TAB);
+
+    public static final RegistryObject<Block> EBONY_LEAVES = registerBlock("ebony_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 30;
+                }
+            }, ModCreativeModeTab.SPACE_TAB);
+
+
+    public static final RegistryObject<Block> EBONY_SAPLING = registerBlock("ebony_sapling",
+            () -> new SaplingBlock(new EbonyTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.SPACE_TAB);
     
     private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);

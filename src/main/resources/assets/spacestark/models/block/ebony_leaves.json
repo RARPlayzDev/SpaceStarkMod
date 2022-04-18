@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "spacestark:block/ebony_leaves"
+  }
+}
